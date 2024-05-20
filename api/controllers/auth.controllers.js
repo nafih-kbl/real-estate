@@ -13,8 +13,8 @@ export const signupController = async (req, res,next) => {
     password === ""
   ) {
     next(errorHandler(400,'all fields are required'))
-  }
-  const hashedPassword = bcryptjs.hashSync(password, 10);
+  }else{
+    const hashedPassword =  bcryptjs.hashSync(password, 10);
   const newUser = new User({
     username,
     email,
@@ -25,5 +25,6 @@ export const signupController = async (req, res,next) => {
     res.json("signup succesfull");
   } catch (error) {
     next(error);
+  }
   }
 };
