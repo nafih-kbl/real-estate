@@ -66,7 +66,7 @@ export default function SignUp() {
           disabled={onSubmit}
           className="bg-slate-700 text-white border rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80"
         >
-          {onSubmit ? "signing in ..." : "sing up  "}
+          {onSubmit ? "loading ..." : "sign up  "}
         </button>
       </form>
       <div className="flex gap-2 mt-5">
