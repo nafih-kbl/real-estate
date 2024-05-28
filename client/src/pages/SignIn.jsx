@@ -6,6 +6,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
+import GAuth from "../components/GAuth";
 export default function SignIn() {
   const [formData, setFormdata] = useState({});
   const {onSubmit,error}=useSelector((state)=>state.user)
@@ -64,7 +65,7 @@ export default function SignIn() {
         >
           {onSubmit ? "loading..." : "sign in"}
         </button>
-      </form>
+        <GAuth/>      </form>
       <div className="flex gap-2 mt-5">
         <p>Don't Have an account?</p>
         <Link to={"/Sign-up"}>
